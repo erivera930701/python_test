@@ -4,6 +4,7 @@ def reverse_string(word):
 
 
 # Test. Verification of reverse_string function
+#Look into reverse a word using a slice()
 def test_reverse_string():
     input_str = "TripleTen"
 
