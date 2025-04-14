@@ -10,7 +10,8 @@ class Cake:
         self.cake_eggs = eggs
 
     def mix_ingredients(self):
-        print(f"Mixing {self.cake_flour} grams of flour, {self.cake_sugar} grams of sugar, {self.cake_milk} ml of milk, and {self.cake_eggs} eggs.")
+        print(
+            f"Mixing {self.cake_flour} grams of flour, {self.cake_sugar} grams of sugar, {self.cake_milk} ml of milk, and {self.cake_eggs} eggs.")
 
     def bake(self):
         print(f"Baking the cake at {self.baking_temperature}°C for {self.baking_time} minutes.")
@@ -19,10 +20,23 @@ class Cake:
         print("Serving the cake with decoration.")
 
 
-# flour, sugar, milk, eggs in order
+class Bakery:
+    def __init__(self, name):
+        self.bakery_name = name
+
+    def prepare_cake(self, cake):
+        print(f"Preparing a cake at {self.bakery_name}.")
+        cake.mix_ingredients()
+        cake.bake()
+        cake.serve()
+
+
+# Create instances of Cake with specific ingredients: flour, sugar, milk, eggs in order
 cake_1 = Cake(200, 200, 240, 2)
 cake_2 = Cake(200, 150, 220, 2)
-cake_3 = Cake(170, 170, 200, 2)
 
-print(cake_1.cake_flour)
-print(cake_2.baking_time)
+# Create an instance of a Bakery named 'TripleTen Bakery'
+bakery_1 = Bakery("TripleTen Bakery")
+
+# Use the Bakery instance to prepare the cake_1
+bakery_1.prepare_cake(cake_1)
